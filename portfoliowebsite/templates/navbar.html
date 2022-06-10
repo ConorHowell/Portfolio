@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" href="{% url 'index' %}">Conor Howell</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto">
+                {% url 'index' as index_url %}
+                <li class="nav-item"><a class="nav-link {% if request.path == index.url %}active{% endif %}" href="{% url 'index' %}">Home</a></li>
+                {% url 'contact' as contact_url %}
+                <li class="nav-item"><a class="nav-link {% if request.path == contact.url %}active{% endif %}" href="{% url 'contact' %}">Contact</a></li>
+                {% url 'projects' as projects_url %}
+                <li class="nav-item"><a class="nav-link" href="{% url 'projects' %}">Projects</a></li>
+                {% url 'resume' as resume_url %}
+                <li class="nav-item"><a class="nav-link" href="{% url 'resume' %}">Resume</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
